@@ -16,6 +16,16 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1);
+        setBackground(new GreenfootImage("Placeholder.png"));
+        addObject(new Playbutton(),300,200);
+        addObject(new Highscores(),300,270);
+
     }
+        
+    public static void main(String[] args) {
+        new MyWorld();
+    }
+
 }
+
