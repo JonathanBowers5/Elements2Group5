@@ -19,7 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         setBackground(new GreenfootImage("Placeholder.png"));
         addObject(new Playbutton(),300,200);
-        addObject(new Highscores(),300,270);
+        addObject(new Highscores(),300,330);
 
     }
         

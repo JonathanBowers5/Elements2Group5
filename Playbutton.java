@@ -16,13 +16,11 @@ public class Playbutton extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            System.out.println("Pressed");
+            System.out.println("Pressed Play");
         }
     }
     
         public Playbutton() {
-        GreenfootImage image = getImage(); // Get the current image
-        image.scale(200, 200); // Change width and height
-        setImage(image); // Apply the resized image
+
     }
 }

@@ -21,8 +21,6 @@ public class Highscores extends Actor
     }
     
         public Highscores() {
-        GreenfootImage image = getImage(); // Get the current image
-        image.scale(200, 200); // Change width and height
-        setImage(image); // Apply the resized image
+
     }
 }
