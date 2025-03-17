@@ -9,6 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class rocketship extends Actor
 {
     private int speed = 3;
+    private double dx = 0; 
+    private double dy = 0; 
+    private double acceleration = 0.2; 
+    private double drag = 0.99; 
+
     /**
      * Act - do whatever the rocketship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,6 +21,7 @@ public class rocketship extends Actor
     public void act()
     {
         rocketMovement();
+        basicPhysics();
     }
       public rocketship() {
         GreenfootImage image = getImage();
@@ -25,7 +31,9 @@ public class rocketship extends Actor
     }
      private void rocketMovement() {
         if (Greenfoot.isKeyDown("w")) {
-            move(speed); //forward
+            double angle = Math.toRadians(getRotation()); 
+            dx += Math.cos(angle) * acceleration; 
+            dy += Math.sin(angle) * acceleration; 
         }
         if (Greenfoot.isKeyDown("s")) {
             move(-speed); //backward
@@ -36,6 +44,11 @@ public class rocketship extends Actor
         if (Greenfoot.isKeyDown("d")) {
             turn(5); // right
         }
+ }
+  private void basicPhysics() {
+        dx *= drag; 
+        dy *= drag;
+        setLocation(getX() + (int) dx, getY() + (int) dy);
  }
 }
 
