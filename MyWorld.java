@@ -1,8 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * The main menu world for Gravity Guys.
- */
+
 public class MyWorld extends World {
     
     public MyWorld() {    
@@ -13,7 +11,14 @@ public class MyWorld extends World {
         GreenfootImage bg = new GreenfootImage("space_background.jpg");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
-        
+         addObject(new Playbutton(),300,330);
+        //addObject(new Highscores(),300,330);
+            
+     public static void main(String[] args) {
+        new MyWorld();
+        }
        
     }
+
 }
+
