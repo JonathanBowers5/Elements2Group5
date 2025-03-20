@@ -13,12 +13,12 @@ public class MyWorld extends World {
         setBackground(bg);
          addObject(new Playbutton(),300,330);
         //addObject(new Highscores(),300,330);
-            
-     public static void main(String[] args) {
-        new MyWorld();
-        }
-       
     }
-
+            
+        public static void main(String[] args) {
+        new MyWorld();
+    }
 }
+
+
 
