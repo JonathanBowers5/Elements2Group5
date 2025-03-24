@@ -20,6 +20,7 @@ public class arrow extends Actor
     public void act()
     {
         baseArrow = new GreenfootImage("arrow.png");
+        setImage(baseArrow);
         pulse();
     }
     
