@@ -25,7 +25,6 @@ public class arrow extends Actor
     }
     
     private void pulse() {
-        // Adjust the scale amount and limits here
         if (growing) {
             scale += 0.02;
             if (scale >= 1.2) growing = false;
