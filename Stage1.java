@@ -19,8 +19,8 @@ public class Stage1 extends World
         super(600, 400, 1); 
     GreenfootImage Platform = new GreenfootImage(150, 20);
     addObject(new Platform(), 500, 390);
+    addObject(new arrow(), 100, 200);
     addObject(new Platform(), 200, 390);
-    addObject(new Platform(), 200, 300);
     addObject(new Platform(), 500, 210);
      addObject(new Platform(), 200, 120);
      addObject(new Exit(), 50, 80);
