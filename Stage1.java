@@ -24,5 +24,6 @@ public class Stage1 extends World
     addObject(new Platform(), 500, 210);
      addObject(new Platform(), 200, 120);
      addObject(new Exit(), 50, 80);
+     addObject(new
 }
 }

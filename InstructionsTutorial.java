@@ -14,7 +14,7 @@ public class InstructionsTutorial extends Actor
      */
     public void act()
     {
-    GreenfootImage image = getImage();
-    image.scale(image.getWidth()*2/5, image.getHeight()*2/5);
+     GreenfootImage image = getImage();  
+    image.scale(300, 60);   
     }
 }
