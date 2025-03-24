@@ -4,7 +4,6 @@ class.Playbutton.image=Start\ Button.png
 dependency1.from=MyWorld
 dependency1.to=Playbutton
 dependency1.type=UsesDependency
-editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=796
 editor.fx.0.y=54
