@@ -21,13 +21,18 @@ public class CharacterSelection extends World {
             Greenfoot.delay(10);
         }
 
-        /*if (Greenfoot.isKeyDown("enter")) {
+        if (Greenfoot.isKeyDown("enter")) {
             if (selection == 1) {
+<<<<<<< HEAD
+                Greenfoot.setWorld(new GameWorld("Boy_Spaceman.png"));
+            } else {
+                Greenfoot.setWorld(new GameWorld("Boy_Spaceman2.png"));
+=======
                 Greenfoot.setWorld(new GameWorld("char1.png"));
             } else {
                 Greenfoot.setWorld(new GameWorld("char2.png"));
-            }
-        }*/ //when gage is down stage 1 level
+>>>>>>> bd16017f543145e853ad414e430904b61c984353
+            } //when gage is down stage 1 level
     }
 
     private void showSelection() {
