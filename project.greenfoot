@@ -6,10 +6,17 @@ class.Playbutton.image=Start\ Button.png
 dependency1.from=MyWorld
 dependency1.to=Playbutton
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=920
 editor.fx.0.width=1470
 editor.fx.0.x=0
 editor.fx.0.y=36
+=======
+editor.fx.0.height=728
+editor.fx.0.width=800
+editor.fx.0.x=238
+editor.fx.0.y=12
+>>>>>>> bd16017f543145e853ad414e430904b61c984353
 height=736
 package.numDependencies=1
 package.numTargets=6

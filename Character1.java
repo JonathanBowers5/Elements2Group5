@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+<<<<<<< HEAD
 public class Character1 extends Actor {
     int speed = 5,10;
     int jumpHeight = 10;
@@ -43,3 +44,27 @@ public class Character1 extends Actor {
 }
 
 }
+=======
+/**
+ * Write a description of class Character1 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Character1 extends Actor
+{
+    /**
+     * Act - do whatever the Character1 wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    int speed = 10;      
+    int jumpHeight = 8;   
+    int health = 12;     
+
+    public void act()
+    {
+        
+
+    }
+}
+>>>>>>> bd16017f543145e853ad414e430904b61c984353
