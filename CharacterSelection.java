@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class CharacterSelection extends World {
     private GreenfootImage char1 = new GreenfootImage("Boy_Spaceman.png");
-    private GreenfootImage char2 = new GreenfootImage("Boy_Spaceman2.png"); 
+    private GreenfootImage char2,2,3,, = new GreenfootImage("Boy_Spaceman2.png"); 
     private int selection = 1; 
 
     public CharacterSelection() {    
