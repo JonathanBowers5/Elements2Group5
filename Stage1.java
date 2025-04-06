@@ -15,15 +15,16 @@ public class Stage1 extends World
      */
     public Stage1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+    // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    super(600, 400, 1); 
     GreenfootImage Platform = new GreenfootImage(150, 20);
+    GreenfootImage bg = new GreenfootImage("Placeholder.png");
     addObject(new Platform(), 500, 390);
-    addObject(new arrow(), 100, 200);
+    addObject(new arrow(), 100, 220);
     addObject(new Platform(), 200, 390);
     addObject(new Platform(), 500, 210);
-     addObject(new Platform(), 200, 120);
-     addObject(new Exit(), 50, 80);
-     addObject(new InstructionsTutorial(), 150, 300);
+    addObject(new Platform(), 200, 120);
+    addObject(new Exit(), 50, 75);
+    addObject(new InstructionsTutorial(), 375, 300);
 }
 }

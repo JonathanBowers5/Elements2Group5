@@ -14,6 +14,7 @@ public class Exit extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+     GreenfootImage image = new GreenfootImage("lift-closed.png");
+     setImage(image);
     }
 }
