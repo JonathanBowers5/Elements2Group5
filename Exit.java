@@ -16,5 +16,9 @@ public class Exit extends Actor
     {
      GreenfootImage image = new GreenfootImage("lift-closed.png");
      setImage(image);
+     
+     if (isTouching(arrow.class)) {
+            Greenfoot.setWorld(new Stage2());
+        }
     }
 }
