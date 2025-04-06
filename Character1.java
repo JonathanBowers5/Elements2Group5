@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-<<<<<<< HEAD
 public class Character1 extends Actor {
-    int speed = 5,10;
+    int speed = 5;
     int jumpHeight = 10;
-    int gravity = 2=-10;
+    int gravity = 2=
     int health = 100;
     boolean isJumping = false;
 
@@ -42,9 +41,6 @@ public class Character1 extends Actor {
         return ground != null;
     }
 }
-
-}
-=======
 /**
  * Write a description of class Character1 here.
  * 
@@ -67,4 +63,3 @@ public class Character1 extends Actor
 
     }
 }
->>>>>>> bd16017f543145e853ad414e430904b61c984353
