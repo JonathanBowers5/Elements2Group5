@@ -11,18 +11,20 @@ public class Stage3 extends World
         GreenfootImage bg = new GreenfootImage("Stage3Background.png");
         setBackground(bg);
 
-        addObject(new Platform(), 100, 350);
-        addObject(new Platform(), 300, 300);
-        addObject(new Platform(), 500, 250);
-        addObject(new Platform(), 200, 150);
-        addObject(new Platform(), 400, 100);
+        addObject(new Platform (Thread.builder  (
+        addObject(new Platform(), 200, 400);
+        addObject(new Platform(), 600, 350);
+        addObject(new Platform(), 300, 250);
+        addObject(new Platform(), 500, 200);
 
-        addObject(new arrow(), 90, 320);
-        addObject(new arrow(), 290, 270);
-
-
+        addObject(new arrow(), 100, 420);
+        addObject(new arrow(), 390, 370);
         addObject(new Exit(), 550, 50);
+        
+        addObject(new Character1(), 100, 300);
+        showText("Stage 3: The space act", getWidth() / 2, 30);
+    }
 
-        addObject(new InstructionsTutorial(), 300, 370);
+        addObject(new InstructionsTutorial(), 400, 470);
     }
 }
