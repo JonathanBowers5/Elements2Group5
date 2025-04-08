@@ -18,9 +18,12 @@ public class Stage2 extends World
     // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
     super(600, 400, 1); 
         
-    GreenfootImage bg = new GreenfootImage("Stage 2 Back.png");
+    GreenfootImage bg = new GreenfootImage("Placeholder.png");
     bg.scale(getWidth(), getHeight());
     setBackground(bg);
+    
+    addObject(new Character1(), 300, 300); 
+
     
     Platform platform1 = new Platform();
     addObject(platform1, 100, 350);
@@ -45,8 +48,8 @@ public class Stage2 extends World
     
     Platform platform8 = new Platform();
     addObject(platform8, 90, 90 );
+    addObject(new Portal(), 45, 45);
     
-    Portal portal1 = new Portal("World");
-    addObject(portal1, 105, 50); 
+
     }
 }

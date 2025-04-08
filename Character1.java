@@ -1,27 +1,54 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-public class Character1 extends Actor
-{
-    private int speed = 4;
+public class Character1 extends Actor {
+    private int velocityY = 0;
+    private int gravity = 1;
+    private int jumpStrength = -15;
 
-    public void act()
-    {
-        checkMovement();
+    private int jumpCount = 0;
+    private final int maxJumps = 2;
+
+    private boolean spacePressedLastFrame = false;
+
+    public void act() {
+        applyGravity();
+        checkKeys();
     }
 
-    private void checkMovement()
-    {
-        if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - speed);
+    public void checkKeys() {
+        if (Greenfoot.isKeyDown("left")) {
+            move(-5);
         }
-        if (Greenfoot.isKeyDown("a")) {
-            setLocation(getX() - speed, getY());
+        if (Greenfoot.isKeyDown("right")) {
+            move(5);
         }
-        if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + speed);
+
+        boolean spacePressedNow = Greenfoot.isKeyDown("up");
+        if (spacePressedNow && !spacePressedLastFrame && jumpCount < maxJumps) {
+            velocityY = jumpStrength;
+            jumpCount++;
         }
-        if (Greenfoot.isKeyDown("d")) {
-            setLocation(getX() + speed, getY());
+        spacePressedLastFrame = spacePressedNow;
+    }
+
+    public void applyGravity() {
+        velocityY += gravity;
+        setLocation(getX(), getY() + velocityY);
+
+        Actor platform = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class);
+        if (platform != null && velocityY >= 0) {
+            int platformTop = platform.getY() - platform.getImage().getHeight() / 2;
+            int characterHalfHeight = getImage().getHeight() / 2;
+            setLocation(getX(), platformTop - characterHalfHeight);
+
+            velocityY = 0;
+            jumpCount = 0;
         }
+    }
+
+
+
+    public boolean isOnGround() {
+        return getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class) != null;
     }
 }
