@@ -21,5 +21,6 @@ public class Stage1 extends World {
 
         addObject(new arrow(), 100, 220);
         addObject(new Portal(), 50, 75);
+        addObject(new InstructionsTutorial(), 150, 315);
     }
 }
