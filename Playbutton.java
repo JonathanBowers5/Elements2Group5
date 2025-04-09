@@ -16,7 +16,7 @@ public class Playbutton extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new Stage1());
+            Greenfoot.setWorld(new CharacterSelect());
         }
     }
     

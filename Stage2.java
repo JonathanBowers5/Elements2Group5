@@ -26,29 +26,22 @@ public class Stage2 extends World
 
     
     Platform platform1 = new Platform();
-    addObject(platform1, 100, 350);
+    addObject(platform1, 120, 350);
     
     Platform platform2 = new Platform();
-    addObject(platform2, 300, 300);
+    addObject(platform2, 600, 300);
     
     Platform platform3 = new Platform();
-    addObject(platform3, 500, 250);
+    addObject(platform3, 100, 215);
     
     Platform platform4 = new Platform();
-    addObject(platform4, 390, 150);
+    addObject(platform4, 630, 155);
     
     Platform platform5 = new Platform();
-    addObject(platform5, 250, 110);
+    addObject(platform5, 50, 90);
     
-    Platform platform6 = new Platform();
-    addObject(platform6, 125, 90 );
     
-    Platform platform7 = new Platform();
-    addObject(platform7, 100, 90 );
-    
-    Platform platform8 = new Platform();
-    addObject(platform8, 90, 90 );
-    addObject(new Portal(), 45, 45);
+    addObject(new Portal2(), 45, 45);
     
 
     }
