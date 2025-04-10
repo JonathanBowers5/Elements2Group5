@@ -14,17 +14,16 @@ public class CharacterSelect extends World {
                 int x = mouse.getX();
                 int y = mouse.getY();
 
-                // Adjust the ranges based on where the blue and pink characters are in your image
+                // Click area for blue character (Character1)
                 if (x >= 150 && x <= 250 && y >= 150 && y <= 250) {
-                    // Clicked on blue character
-                    Stage1 stage = new Stage1();
-                    stage.addObject(new Character1(), 300, 300); // Change position if needed
-                    Greenfoot.setWorld(stage);
-                } else if (x >= 350 && x <= 450 && y >= 150 && y <= 250) {
-                    // Clicked on pink character
-                    Stage1 stage = new Stage1();
-                    stage.addObject(new Character2(), 300, 300); // Change position if needed
-                    Greenfoot.setWorld(stage);
+                    Stage1.setSelectedCharacter("Character1");
+                    Greenfoot.setWorld(new Stage1());
+                }
+
+                // Click area for pink character (Character2)
+                else if (x >= 350 && x <= 450 && y >= 150 && y <= 250) {
+                    Stage1.setSelectedCharacter("Character2");
+                    Greenfoot.setWorld(new Stage1());
                 }
             }
         }

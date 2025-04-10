@@ -21,10 +21,8 @@ public class Stage2 extends World
     GreenfootImage bg = new GreenfootImage("3.jpg");
     bg.scale(getWidth(), getHeight());
     setBackground(bg);
-    
-    addObject(new Character1(), 300, 300); 
 
-    
+
     Platform platform1 = new Platform();
     addObject(platform1, 120, 350);
     
