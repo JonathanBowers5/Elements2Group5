@@ -1,13 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 public class MyWorld extends World {
     private GreenfootSound music;
 
     public MyWorld() {    
-        // Create a new world with 600x400 pixels.
         super(600, 400, 1); 
         
-        // Set background
+        
         GreenfootImage bg = new GreenfootImage("space_background.jpg");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);

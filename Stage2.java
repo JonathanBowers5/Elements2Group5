@@ -18,7 +18,7 @@ public class Stage2 extends World
     // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
     super(600, 400, 1); 
         
-    GreenfootImage bg = new GreenfootImage("Placeholder.png");
+    GreenfootImage bg = new GreenfootImage("3.jpg");
     bg.scale(getWidth(), getHeight());
     setBackground(bg);
     
