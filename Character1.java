@@ -4,9 +4,15 @@ public class Character1 extends Actor
 {
     private int speed = 4;
     private int jumpStrength = -12;
-    private int gravity = 1;
+    private int gravity;
     private int velocityY = 0;
     private boolean isJumping = false;
+
+    
+    public Character1(int gravity)
+    {
+        this.gravity = gravity;
+    }
 
     public void act()
     {
@@ -15,6 +21,7 @@ public class Character1 extends Actor
         jump();
     }
 
+    
     public void moveLeftRight()
     {
         if (Greenfoot.isKeyDown("left")) {
@@ -25,6 +32,7 @@ public class Character1 extends Actor
         }
     }
 
+    
     public void jump()
     {
         if (Greenfoot.isKeyDown("up") && !isJumping) {
@@ -33,11 +41,13 @@ public class Character1 extends Actor
         }
     }
 
+    
     public void applyGravity()
     {
         setLocation(getX(), getY() + velocityY);
         velocityY += gravity;
 
+        
         if (isTouching(Platform.class) && velocityY > 0) {
             while (isTouching(Platform.class)) {
                 setLocation(getX(), getY() - 1);
