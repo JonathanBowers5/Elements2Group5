@@ -4,22 +4,43 @@ public class Stage2 extends World
 {
     public Stage2()
     {    
+        
         super(600, 400, 1); 
         
-        GreenfootImage bg = new GreenfootImage("3.jpg");
+        GreenfootImage bg = new GreenfootImage("Stage 2 Back.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         
-        addObject(new Character1(), 300, 300); // Character is placed here
-
-        // Add platforms at specific positions
-        addObject(new Platform(), 120, 350);  // Platform 1
-        addObject(new Platform(), 600, 300);  // Platform 2
-        addObject(new Platform(), 100, 215);  // Platform 3
-        addObject(new Platform(), 630, 155);  // Platform 4
-        addObject(new Platform(), 50, 90);    // Platform 5
         
-        // Portal object to move to another world (if needed)
-        addObject(new Portal2(), 45, 45); 
+        Character1 character = new Character1(1);
+        addObject(character, 300, 300);
+
+        
+        Platform platform1 = new Platform();
+        addObject(platform1, 100, 350);
+    
+        Platform platform2 = new Platform();
+        addObject(platform2, 300, 300);
+    
+        Platform platform3 = new Platform();
+        addObject(platform3, 500, 250);
+    
+        Platform platform4 = new Platform();
+        addObject(platform4, 390, 150);
+    
+        Platform platform5 = new Platform();
+        addObject(platform5, 250, 110);
+    
+        Platform platform6 = new Platform();
+        addObject(platform6, 125, 90 );
+    
+        Platform platform7 = new Platform();
+        addObject(platform7, 100, 90 );
+    
+        Platform platform8 = new Platform();
+        addObject(platform8, 90, 90 );
+    
+        Portal portal1 = new Portal("World");
+        addObject(portal1, 105, 50); 
     }
 }
