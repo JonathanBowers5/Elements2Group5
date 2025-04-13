@@ -45,7 +45,28 @@ public class Stage2 extends World
     
     public class Character1 extends Actor
 {
-    private int velocityY = 0; 
-    private int gravity = 1;   
+    private int velocityY = 0;
+    private int gravity = 1;
 
+    public void act()
+    {
+        fall();
+        checkKeys();
+    }
+
+    public void fall()
+    {
+        setLocation(getX(), getY() + velocityY);
+        velocityY += gravity;
+    }
     
+    public void checkKeys()
+    {
+        if(Greenfoot.isKeyDown("left")) {
+            setLocation(getX() - 4, getY());
+        }
+        if(Greenfoot.isKeyDown("right")) {
+            setLocation(getX() + 4, getY());
+        }
+    }
+}
