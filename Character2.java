@@ -1,65 +1,51 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Character2 extends Actor {
-    int speed = 5;
-    int jumpHeight = 10;
-    int gravity = 2=
-    int health = 100;
-    boolean isJumping = false;
+public class Character2 extends Actor
+{
+    private int speed = 5;
+    private int jumpStrength = -10;
+    private int gravity = 1;
+    private int velocityY = 0;
+    private boolean isJumping = false;
 
-    public void act() {
-        movePlayer();
+    public void act()
+    {
+        moveLeftRight();
         applyGravity();
+        jump();
     }
 
-    public void movePlayer() {
-        if (Greenfoot.isKeyDown("left")) {
+    public void moveLeftRight()
+    {
+        if (Greenfoot.isKeyDown("a")) {
             setLocation(getX() - speed, getY());
-            setImage("Character_Left.png"); 
-        } 
-        if (Greenfoot.isKeyDown("right")) {
+            setImage("Boy_Spaceman.png");
+        }
+        if (Greenfoot.isKeyDown("d")) { 
             setLocation(getX() + speed, getY());
-            setImage("Character_Right.png"); 
-        } 
-        if (Greenfoot.isKeyDown("up") && !isJumping) {
-            setLocation(getX(), getY() - jumpHeight);
+            setImage("Boy_Spaceman2.png");
+        }
+    }
+
+    public void jump()
+    {
+        if (Greenfoot.isKeyDown("w") && !isJumping) { 
+            velocityY = jumpStrength; 
             isJumping = true;
         }
     }
 
-    public void applyGravity() {
-        if (isJumping) {
-            setLocation(getX(), getY() + gravity);
-            if (isOnGround()) {
-                isJumping = false;
-            }
-        }
-    }
-
-    public boolean isOnGround() {
-        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
-        return ground != null;
-    }
-}
-/**
- * Write a description of class Character1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Character2 extends Actor
-{
-    /**
-     * Act - do whatever the Character1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    int speed = 10;      
-    int jumpHeight = 8;   
-    int health = 12;     
-
-    public void act()
+    public void applyGravity()
     {
-        
+        setLocation(getX(), getY() + velocityY);
+        velocityY += gravity;
 
+        if (isTouching(Platform.class) && velocityY > 0) {
+            while (isTouching(Platform.class)) {
+                setLocation(getX(), getY() - 1);
+            }
+            velocityY = 0;
+            isJumping = false;
+        }
     }
 }
