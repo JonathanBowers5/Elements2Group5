@@ -14,16 +14,16 @@ public class Meteor extends Actor {
     public void act() {
         setLocation(getX(), getY() + speed);
 
-        // Remove meteor if it hits the floor (bottom of screen)
+        
         if (getY() >= getWorld().getHeight() - getImage().getHeight() / 2) {
             getWorld().removeObject(this);
             return;
         }
 
-        // If hits player, restart level
+        
         Actor player = getOneIntersectingObject(Character1.class);
         if (player != null) {
-            Greenfoot.setWorld(new Stage3()); // Restart current stage or go to GameOver
+            Greenfoot.setWorld(new Stage3()); 
         }
     }
 }

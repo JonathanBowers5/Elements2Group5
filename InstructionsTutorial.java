@@ -15,7 +15,7 @@ public class InstructionsTutorial extends Actor
     public void act()
     {
     GreenfootImage image = new GreenfootImage("InstructionsOne.png");
-    image.scale(300, 50); // or whatever size you want
+    image.scale(300, 50); 
     setImage(image);
     }
 }

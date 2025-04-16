@@ -16,14 +16,14 @@ public class Character1 extends Actor {
     }
 
     public void checkKeys() {
-        if (Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("A")) {
             move(-5);
         }
-        if (Greenfoot.isKeyDown("right")) {
+        if (Greenfoot.isKeyDown("D")) {
             move(5);
         }
 
-        boolean spacePressedNow = Greenfoot.isKeyDown("up");
+        boolean spacePressedNow = Greenfoot.isKeyDown("W");
         if (spacePressedNow && !spacePressedLastFrame && jumpCount < maxJumps) {
             velocityY = jumpStrength;
             jumpCount++;

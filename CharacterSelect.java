@@ -14,15 +14,17 @@ public class CharacterSelect extends World {
                 int x = mouse.getX();
                 int y = mouse.getY();
 
-                // Click area for blue character (Character1)
+                
                 if (x >= 150 && x <= 250 && y >= 150 && y <= 250) {
                     Stage1.setSelectedCharacter("Character1");
+                    Global.setCurrentCharacter("Character1");
                     Greenfoot.setWorld(new Stage1());
                 }
 
-                // Click area for pink character (Character2)
+                
                 else if (x >= 350 && x <= 450 && y >= 150 && y <= 250) {
                     Stage1.setSelectedCharacter("Character2");
+                    Global.setCurrentCharacter("Character2");
                     Greenfoot.setWorld(new Stage1());
                 }
             }

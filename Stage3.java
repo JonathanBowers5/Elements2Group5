@@ -7,7 +7,7 @@ public class Stage3 extends World {
     public Stage3() {    
         super(600, 400, 1); 
         
-        GreenfootImage bg = new GreenfootImage("Placeholder.png");
+        GreenfootImage bg = new GreenfootImage("Mars.png");
         bg.scale(getWidth(), getHeight());
         setBackground(bg);
         
@@ -19,7 +19,9 @@ public class Stage3 extends World {
         addObject(new Platform(), 630, 155);
         addObject(new Platform(), 50, 90);
         
-        addObject(new Portal(), 45, 45);
+        addObject(new Portal3(), 45, 45);
+        addObject(new Lava(), 300, 405);
+
         
         addObject(new Meteor(2), 200, 0);
         addObject(new Meteor(3), 400, -100);
@@ -29,11 +31,11 @@ public class Stage3 extends World {
     public void act() {
         spawnTimer++;
 
-        if (spawnTimer >= 120) { // ~2 seconds at 60fps
+        if (spawnTimer >= 120) { 
             int x;
             do {
                 x = Greenfoot.getRandomNumber(getWidth());
-            } while (x >= 0 && x <= 120); // Avoid portal area (around x = 45–50)
+            } while (x >= 0 && x <= 120); 
 
             int speed = Greenfoot.getRandomNumber(2) + 1;
             addObject(new Meteor(speed), x, 0);
