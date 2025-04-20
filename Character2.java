@@ -3,25 +3,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Character2 extends Actor {
     int speed = 5;
     int jumpHeight = 10;
-    int gravity = 2=
-    int health = 100;
+    int gravity = 2;
     boolean isJumping = false;
+
+    private boolean isInvincible = false;
+    private int invincibilityTime = 60;
+    private int invincibilityCounter = 0;
 
     public void act() {
         movePlayer();
         applyGravity();
+
+        if (isInvincible) {
+            handleInvincibility();
+        } else {
+            checkHazards();
+        }
     }
 
     public void movePlayer() {
-        if (Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("a")) {
             setLocation(getX() - speed, getY());
-            setImage("Character_Left.png"); 
+            setImage("Character2_Left.png");
         } 
-        if (Greenfoot.isKeyDown("right")) {
+        if (Greenfoot.isKeyDown("d")) {
             setLocation(getX() + speed, getY());
-            setImage("Character_Right.png"); 
+            setImage("Character2_Right.png");
         } 
-        if (Greenfoot.isKeyDown("up") && !isJumping) {
+        if (Greenfoot.isKeyDown("w") && !isJumping) {
             setLocation(getX(), getY() - jumpHeight);
             isJumping = true;
         }
@@ -40,26 +49,34 @@ public class Character2 extends Actor {
         Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Ground.class);
         return ground != null;
     }
-}
-/**
- * Write a description of class Character1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Character2 extends Actor
-{
-    /**
-     * Act - do whatever the Character1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    int speed = 10;      
-    int jumpHeight = 8;   
-    int health = 12;     
 
-    public void act()
-    {
-        
+    public void checkHazards() {
+        if (isTouching(Lava.class) || isTouching(Mentor.class)) {
+            Livebars world = (Livebars) getWorld();
+            world.loseLife();
 
+            if (world.getLivesBar().getLives() == 0) {
+                Greenfoot.stop(); // Game Over
+            } else {
+                setLocation(200, 100); // Respawn
+                isInvincible = true;
+                invincibilityCounter = invincibilityTime;
+            }
+        }
+    }
+
+    public void handleInvincibility() {
+        invincibilityCounter--;
+
+        if (invincibilityCounter % 10 < 5) {
+            getImage().setTransparency(100); // Flashing effect
+        } else {
+            getImage().setTransparency(255); // Normal
+        }
+
+        if (invincibilityCounter <= 0) {
+            isInvincible = false;
+            getImage().setTransparency(255);
+        }
     }
 }
