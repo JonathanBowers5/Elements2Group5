@@ -5,14 +5,15 @@ public class Livebars extends World {
 
     public Livebars() {
         super(600, 400, 1);
-
         
-        Character1 player = new Character1();
-        addObject(player, 100, 100);
+        Character1 player1 = new Character1();
+        Character2 player2 = new Character2();
 
-        
+        addObject(player1, 100, 100);
+        addObject(player2, 200, 100);
+
         livesBar = new LivesBar();
-        addObject(livesBar, 100, 30);
+        addObject(livesBar, 0, 0);
     }
 
     public LivesBar getLivesBar() {

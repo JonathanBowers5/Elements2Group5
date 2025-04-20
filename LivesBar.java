@@ -1,32 +1,29 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import java.util.ArrayList;
 
 public class LivesBar extends Actor {
     private int lives = 5;
-    private int maxLives = 5;
-    private GreenfootImage heartFull;
-    private GreenfootImage heartEmpty;
+    private GreenfootImage fullHeart = new GreenfootImage("full_heartred.png");
+    private GreenfootImage emptyHeart = new GreenfootImage("empty_heartblue.png");
+    private ArrayList<Actor> hearts = new ArrayList<>();
 
     public LivesBar() {
-        heartFull = new GreenfootImage("full_heartred.png");
-        heartEmpty = new GreenfootImage("empty_heartblue.png");
-        update();
+        updateDisplay();
     }
 
-    public void act() {
-        
+    public void addedToWorld(World world) {
+        for (int i = 0; i < 5; i++) {
+            Actor heart = new Actor() {};
+            heart.setImage(i < lives ? new GreenfootImage(fullHeart) : new GreenfootImage(emptyHeart));
+            world.addObject(heart, 30 + i * 40, 30);
+            hearts.add(heart);
+        }
     }
 
     public void loseLife() {
         if (lives > 0) {
             lives--;
-            update();
-        }
-    }
-
-    public void gainLife() {
-        if (lives < maxLives) {
-            lives++;
-            update();
+            updateDisplay();
         }
     }
 
@@ -34,22 +31,9 @@ public class LivesBar extends Actor {
         return lives;
     }
 
-    public void update() {
-        int heartWidth = heartFull.getWidth();
-        int spacing = 5;
-        int imageWidth = (heartWidth + spacing) * maxLives;
-        int imageHeight = heartFull.getHeight();
-
-        GreenfootImage image = new GreenfootImage(imageWidth, imageHeight);
-
-        for (int i = 0; i < maxLives; i++) {
-            if (i < lives) {
-                image.drawImage(heartFull, i * (heartWidth + spacing), 0);
-            } else {
-                image.drawImage(heartEmpty, i * (heartWidth + spacing), 0);
-            }
+    public void updateDisplay() {
+        for (int i = 0; i < hearts.size(); i++) {
+            hearts.get(i).setImage(i < lives ? new GreenfootImage(fullHeart) : new GreenfootImage(emptyHeart));
         }
-
-        setImage(image);
     }
 }
