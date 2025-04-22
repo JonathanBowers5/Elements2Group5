@@ -2,9 +2,12 @@ import greenfoot.*;
 
 public class Portal2 extends Actor {
     public void act() {
-        Actor player = getOneIntersectingObject(Character1.class);
-        Actor player2 = getOneIntersectingObject(Character2.class);
-        if (player != null||(player2!=null)) {
+        if (getOneIntersectingObject(Character1.class) != null) {
+            Global.setCurrentCharacter("Character1");
+            Greenfoot.setWorld(new Stage3());
+        }
+        else if (getOneIntersectingObject(Character2.class) != null) {
+            Global.setCurrentCharacter("Character2");
             Greenfoot.setWorld(new Stage3());
         }
     }

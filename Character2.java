@@ -35,11 +35,15 @@ public class Character2 extends Actor {
         velocityY += gravity;
         setLocation(getX(), getY() + velocityY);
 
-        Actor platform = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class);
-        if (platform != null && velocityY >= 0) {
-            int platformTop = platform.getY() - platform.getImage().getHeight() / 2;
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class);
+        if (ground == null) {
+            ground = getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Ice.class);
+        }
+
+        if (ground != null && velocityY >= 0) {
+            int groundTop = ground.getY() - ground.getImage().getHeight() / 2;
             int characterHalfHeight = getImage().getHeight() / 2;
-            setLocation(getX(), platformTop - characterHalfHeight);
+            setLocation(getX(), groundTop - characterHalfHeight);
 
             velocityY = 0;
             jumpCount = 0;
@@ -47,6 +51,12 @@ public class Character2 extends Actor {
     }
 
     public boolean isOnGround() {
-        return getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class) != null;
+        return getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Platform.class) != null
+            || getOneObjectAtOffset(0, getImage().getHeight() / 2 + 1, Ice.class) != null;
+            
     }
+    
+    
 }
+
+

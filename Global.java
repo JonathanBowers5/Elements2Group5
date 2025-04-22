@@ -31,4 +31,5 @@ public class Global
     public static String getCurrentCharacter(){
         return currentCharacter;
     }
+    
 }

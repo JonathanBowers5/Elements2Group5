@@ -1,6 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Stage3 extends World {
+    private Actor player;  
+    private static String selectedCharacter = "Character1"; // Default choice
+
+    public static void setSelectedCharacter(String characterName) {
+        selectedCharacter = characterName;
+    }
+
+    public static String getSelectedCharacter() {
+        return selectedCharacter;
+    }
 
     private int spawnTimer = 0;
 
@@ -21,6 +31,14 @@ public class Stage3 extends World {
         
         addObject(new Portal3(), 45, 45);
         addObject(new Lava(), 300, 405);
+        
+        System.out.println(selectedCharacter);
+        if (Global.getCurrentCharacter().equals("Character1")) {
+            player = new Character1();
+        } else {
+            player = new Character2();
+        }
+        addObject(player, 300, 300);
 
         
         addObject(new Meteor(2), 200, 0);
