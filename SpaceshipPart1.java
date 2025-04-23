@@ -1,8 +1,8 @@
 import greenfoot.*;
 
-public class SpaceshipPart extends Actor {
-    public SpaceshipPart() {
-        GreenfootImage image = new GreenfootImage("Part1.png");
+public class SpaceshipPart1 extends Actor {
+    public SpaceshipPart1() {
+        GreenfootImage image = new GreenfootImage("Part2.png");
         image.scale(40, 40); 
         setImage(image);
     }

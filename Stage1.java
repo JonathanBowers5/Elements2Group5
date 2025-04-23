@@ -35,7 +35,6 @@ public class Stage1 extends World {
         }
         addObject(player, 300, 300);
         
-        //addObject(new SpaceshipPart(), 250, 120);
 
         // Other objects
         addObject(new arrow(), 100, 220);

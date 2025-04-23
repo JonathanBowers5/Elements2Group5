@@ -51,7 +51,7 @@ public class Stage2 extends World
     
     
     addObject(new Portal2(), 45, 45);
-    
+    addObject(new SpaceshipPart(), 200, 190);
     
     
     System.out.println(selectedCharacter);

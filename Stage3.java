@@ -39,6 +39,8 @@ public class Stage3 extends World {
             player = new Character2();
         }
         addObject(player, 300, 300);
+        addObject(new SpaceshipPart1(), 650, 300);
+
 
         
         addObject(new Meteor(2), 200, 0);
